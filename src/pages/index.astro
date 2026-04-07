@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="gold" />
     <title>Ilandarideva</title>
     <style>
       body {
@@ -15,19 +16,9 @@
         height: 100vh;
         overflow: hidden;
         position: relative;
-      }
-
-      .background-blur {
         background-image: url("/bg.jpg");
         background-size: cover;
         background-position: center;
-        filter: blur(20px);
-        position: absolute;
-        top: -20px;
-        left: -20px;
-        right: -20px;
-        bottom: -20px;
-        z-index: 1;
       }
 
       .foreground-image {
@@ -37,17 +28,19 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        backdrop-filter: blur(10px);
       }
 
       .foreground-image img {
         max-width: 100%;
         max-height: 100%;
         object-fit: contain;
+        filter: drop-shadow(0 0 2rem black);
       }
     </style>
   </head>
   <body>
-    <div class="background-blur"></div>
+    <!-- <div class="background-blur"></div> -->
     <div class="foreground-image">
       <img src="/bg.jpg" alt="background" />
     </div>
