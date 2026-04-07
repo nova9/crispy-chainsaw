@@ -11,14 +11,45 @@
     <title>Ilandarideva</title>
     <style>
       body {
+        margin: 0;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .background-blur {
         background-image: url("/bg.jpg");
         background-size: cover;
         background-position: center;
-        background-repeat: no-repeat;
-        height: 100vh;
-        margin: 0;
+        filter: blur(20px);
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        right: -20px;
+        bottom: -20px;
+        z-index: 1;
+      }
+
+      .foreground-image {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .foreground-image img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
       }
     </style>
   </head>
-  <body></body>
+  <body>
+    <div class="background-blur"></div>
+    <div class="foreground-image">
+      <img src="/bg.jpg" alt="background" />
+    </div>
+  </body>
 </html>
